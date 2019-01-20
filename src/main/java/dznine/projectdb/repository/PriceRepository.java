@@ -1,10 +1,9 @@
 package dznine.projectdb.repository;
 
-import dznine.projectdb.entity.Components;
+import dznine.projectdb.entity.Prices;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ComponentsRepository extends JpaRepository<Components,Long> {
-
+public interface PriceRepository extends JpaRepository<Prices,Long> {
 }

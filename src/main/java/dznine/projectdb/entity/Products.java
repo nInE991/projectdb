@@ -7,9 +7,8 @@ import javax.persistence.*;
 public class Products {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
-    @Column(name = "name",unique = true,nullable = false)
+    @Column(unique = true,nullable = false)
     private String name;
 
     public void setId(Long id) {
