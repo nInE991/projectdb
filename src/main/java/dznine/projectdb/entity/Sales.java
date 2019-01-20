@@ -16,6 +16,12 @@ public class Sales {
     private Prices prices;
     @Column(nullable = false)
     private Integer count;
+    @Column(nullable = false)
+    private Float sum;
+    @Column(nullable = false)
+    private Float discount;
+    @Column(nullable = false)
+    private Float total;
 
     public Long getId() {
         return id;
@@ -47,5 +53,29 @@ public class Sales {
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    public Float getSum() {
+        return sum;
+    }
+
+    public void setSum(Float sum) {
+        this.sum = sum;
+    }
+
+    public Float getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Float discount) {
+        this.discount = discount;
+    }
+
+    public Float getTotal() {
+        return total;
+    }
+
+    public void setTotal(Float total) {
+        this.total = total;
     }
 }

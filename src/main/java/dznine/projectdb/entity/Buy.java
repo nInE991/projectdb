@@ -18,6 +18,8 @@ public class Buy {
     private Float count;
     @Column(nullable = false)
     private Float price;
+    @Column(nullable = false)
+    private Float total;
 
     public Long getId() {
         return id;
@@ -57,5 +59,13 @@ public class Buy {
 
     public void setPrice(Float price) {
         this.price = price;
+    }
+
+    public Float getTotal() {
+        return total;
+    }
+
+    public void setTotal(Float total) {
+        this.total = total;
     }
 }

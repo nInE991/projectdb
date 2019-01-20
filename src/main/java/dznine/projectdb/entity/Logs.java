@@ -70,4 +70,5 @@ public class Logs {
     public void setNote(String note) {
         this.note = note;
     }
+
 }

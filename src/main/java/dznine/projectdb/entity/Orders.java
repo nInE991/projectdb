@@ -17,6 +17,8 @@ public class Orders {
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="counterpoints_id",nullable = false)
     private Counterparties counterparties;
+    @Column(nullable = false)
+    private Float total;
     @Column
     private String note;
 
