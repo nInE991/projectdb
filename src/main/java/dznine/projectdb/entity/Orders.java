@@ -8,9 +8,9 @@ import java.util.Date;
 public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     @Column(nullable = false)
-    private Date data;
+    private Date date;
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="ordersActions_id",nullable = false)
     private OrdersActions ordersActions;
@@ -22,20 +22,34 @@ public class Orders {
     @Column
     private String note;
 
-    public Long getId() {
+    public Orders() {
+
+    }
+
+    public Orders(Integer id, Date date, Float total, String note, OrdersActions ordersActions, Counterparties counterparties) {
+        this.id = id;
+        this.date = date;
+        this.ordersActions = ordersActions;
+        this.counterparties = counterparties;
+        this.total = total;
+        this.note = note;
+    }
+
+    public Float getTotal() {
+        return total;
+    }
+
+    public void setTotal(Float total) {
+        this.total = total;
+    }
+
+    public Integer getId() {
+
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Date getData() {
-        return data;
-    }
-
-    public void setData(Date data) {
-        this.data = data;
     }
 
     public OrdersActions getOrdersActions() {
@@ -60,5 +74,17 @@ public class Orders {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String toString() {
+        return date.toString();
     }
 }

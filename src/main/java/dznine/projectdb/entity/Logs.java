@@ -9,7 +9,7 @@ import java.util.Date;
 public class Logs {
     @Id
     @GeneratedValue
-    private Long id;
+    private Integer id;
     @Column(nullable = false)
     private Date date;
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
@@ -20,15 +20,16 @@ public class Logs {
     private Components components;
     @Column(nullable = false)
     private Float count;
-    @Column(nullable = false)
+    @Column
     private String note;
 
-    public Long getId() {
-        return id;
+    public Logs() {
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Logs(Integer id, String components, Double count) {
+        this.components.setId(id);
+        this.components.setName(components);
+        this.count = count.floatValue();
     }
 
     public Date getDate() {
@@ -71,4 +72,11 @@ public class Logs {
         this.note = note;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }
