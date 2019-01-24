@@ -4,8 +4,8 @@
     <div class="clearfix">
         <span class="float-left"><h2>Список заказов</h2></span>
         <span class="float-right pr-5">
-            <a class=" mt-1  btn btn-dark" href="/orders/add" role="button">Добавить Покупку</a>
-            <a class=" mt-1  btn btn-dark" href="/orders/add" role="button">Добавить Продажу</a>
+            <a class=" mt-1  btn btn-dark"  href="/orders/add" role="button">Купить</a>
+            <a class=" mt-1  btn btn-dark"  href="/orders/add" role="button">Продать</a>
         </span>
     </div>
     <div class="float-sm-right"></div>

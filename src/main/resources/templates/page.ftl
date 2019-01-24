@@ -14,24 +14,31 @@
     <script src="/js/app.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <ul class="navbar-nav">
-        <li class="nav-item active">
-            <a class="nav-link" href="/">Главная</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/orders">Заказы</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/">Продукция</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/logs">Склад</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/counterparties">Контрагенты</a>
-        </li>
-    </ul>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <a class="navbar-brand" href="/">Главная</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse mt-1" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+                <a class="nav-link" href="/orders">Заказы</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Продукция</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Компоненты</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logs">Склад</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/counterparties">Контрагенты</a>
+            </li>
+        </ul>
+        <span class="navbar-text balance">Balance : </span>
+    </div>
 </nav>
 <#nested>
 </body>

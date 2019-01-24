@@ -57,4 +57,16 @@ $(document).ready(function () {
             }
         });
     });
+    $('.trlinklog').on('click',function () {
+        document.location.replace("/logs/"+ $(this).data('id'));
+    });
+        $.ajax({
+            type: 'GET',
+            url: '/balance',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                $('.balance').text($('.balance').text()+ data+" ");
+            }
+        });
 });

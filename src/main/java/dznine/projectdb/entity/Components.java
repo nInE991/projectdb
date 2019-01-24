@@ -16,6 +16,9 @@ public class Components {
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "units_id",nullable = false)
     private Units units;
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name="balance_id",nullable = false)
+    ComponentBalance componentBalance;
 
     public Integer getId() {
         return id;
@@ -47,5 +50,13 @@ public class Components {
 
     public void setUnits(Units units) {
         this.units = units;
+    }
+
+    public ComponentBalance getComponentBalance() {
+        return componentBalance;
+    }
+
+    public void setComponentBalance(ComponentBalance componentBalance) {
+        this.componentBalance = componentBalance;
     }
 }

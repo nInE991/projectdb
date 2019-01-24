@@ -26,10 +26,11 @@ public class Logs {
     public Logs() {
     }
 
-    public Logs(Integer id, String components, Double count) {
+    public Logs(Integer id, String components, Double count,String name) {
         this.components.setId(id);
         this.components.setName(components);
         this.count = count.floatValue();
+        this.components.getUnits().setName(name);
     }
 
     public Date getDate() {

@@ -2,10 +2,9 @@
 <@a.basis>
     <div class="container " style="margin-top: 30px">
         <div class="clearfix">
-            <span class="float-left"><h2>Список Копонентов</h2></span>
+            <span class="float-left"><h2>Склад</h2></span>
             <span class="float-right pr-5">
-            <a class=" mt-1  btn btn-dark" href="/orders/add" role="button">Добавить Компонент</a>
-            <a class=" mt-1  btn btn-dark" href="/orders/add" role="button">Добавить Продажу</a>
+            <a class=" mt-1  btn btn-dark" href="/orders/add" role="button">Инвентаризация</a>
         </span>
         </div>
         <div class="float-sm-right"></div>
@@ -17,16 +16,19 @@
                 <th scope="col">Ед. Измерения</th>
             </tr>
             </thead>
-        <#--<#list ordersList as orders>-->
-            <tr class="trlink" date-link="">
+        <#list logsList as componentBalance>
+            <tr class="trlinklog" date-link="${componentBalance.components.id}">
                 <td>
-                    <div class="mt-1"></div>
+                    <div class="mt-1">${componentBalance.components.name}</div>
                 </td>
                 <td>
-                    <div class="mt-1"></div>
+                    <div class="mt-1">${componentBalance.count}</div>
+                </td>
+                <td>
+                    <div class="mt-1">${componentBalance.components.units.name}</div>
                 </td>
             </tr>
-        <#--</#list>-->
+        </#list>
         </table>
     </div>
 </@a.basis>
