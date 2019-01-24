@@ -32,11 +32,11 @@
                 </td>
                 <td>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-outline-light text-dark button_edit"
-                                date-id="${counterparties.id}"><span
+                        <button type="button" class="btn btn-outline-light text-dark button_edit_parties"
+                                data-id="${counterparties.id}"><span
                                 class="oi oi-pencil"></span></button>
-                        <button type="button" class="btn btn-outline-light text-dark button_del"
-                                date-id="${counterparties.id}"><span
+                        <button type="button" class="btn btn-outline-light text-dark button_del_parties"
+                                data-id="${counterparties.id}"><span
                                 class="oi oi-trash"></span></button>
                     </div>
                 </td>

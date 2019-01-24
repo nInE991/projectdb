@@ -18,7 +18,7 @@
         <label for="address">Адрес:</label>
         <input type="text" class="form-control" name="address" id="address">
     </div>
-    <button type="submit" class="btn btn-primary button_send">Сохранить</button>
+    <button type="submit" class="btn btn-primary button_send_parties">Сохранить</button>
     <a class="btn" role="button" href="/counterparties">Отмена</a>
 </div>
 </@a.basis>

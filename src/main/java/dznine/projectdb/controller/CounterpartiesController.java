@@ -50,7 +50,7 @@ public class CounterpartiesController {
     }
 
 
-    @PostMapping("/counterparties")
+    @PostMapping("/counterparties/edit")
     public ResponseEntity save(@RequestParam("id") String id, @RequestParam("name") String name, @RequestParam("director") String director,
                                @RequestParam("telephone") String telephone, @RequestParam("address") String address) {
         try {

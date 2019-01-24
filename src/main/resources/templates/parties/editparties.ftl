@@ -18,7 +18,7 @@
         <label for="address">Адрес:</label>
         <input type="text" class="form-control" name="address" value="${counterparties.address}" id="address">
     </div>
-    <button type="submit" class="btn btn-primary button_send" date-id="${counterparties.id}">Сохранить</button>
+    <button type="submit" class="btn btn-primary button_edit_send_parties" data-id="${counterparties.id}">Сохранить</button>
     <a class="btn" role="button" href="/counterparties">Отмена</a>
 </div>
 
