@@ -28,7 +28,7 @@
                 <a class="nav-link" href="/">Продукция</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/">Компоненты</a>
+                <a class="nav-link" href="/components">Компоненты</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/logs">Склад</a>

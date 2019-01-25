@@ -11,6 +11,13 @@ public class ComponentBalance {
     @Column(nullable = false)
     private Float balance;
 
+    public ComponentBalance() {
+    }
+
+    public ComponentBalance(Float balance) {
+        this.balance = balance;
+    }
+
     public Integer getId() {
         return id;
     }

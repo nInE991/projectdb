@@ -13,13 +13,26 @@ public class Components {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "products_id",nullable = false)
     private Products products;
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.DETACH)
     @JoinColumn(name = "units_id",nullable = false)
     private Units units;
     @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="balance_id",nullable = false)
     ComponentBalance componentBalance;
 
+    public Components() {
+    }
+
+    public Components(String name,Units units) {
+        this.name = name;
+        this.units = units;
+    }
+
+    public Components(Integer id, String name, Units units) {
+        this.id = id;
+        this.name = name;
+        this.units = units;
+    }
     public Integer getId() {
         return id;
     }

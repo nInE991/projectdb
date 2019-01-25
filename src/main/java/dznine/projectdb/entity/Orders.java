@@ -19,6 +19,10 @@ public class Orders {
     private Counterparties counterparties;
     @Column(nullable = false)
     private Float total;
+    @Column(nullable = false)
+    private Float discount;
+    @Column(nullable = false)
+    private Float totalwithdiscount;
     @Column
     private String note;
 
@@ -86,5 +90,21 @@ public class Orders {
 
     public String toString() {
         return date.toString();
+    }
+
+    public Float getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Float discount) {
+        this.discount = discount;
+    }
+
+    public Float getTotalwithdiscount() {
+        return totalwithdiscount;
+    }
+
+    public void setTotalwithdiscount(Float totalwithdiscount) {
+        this.totalwithdiscount = totalwithdiscount;
     }
 }

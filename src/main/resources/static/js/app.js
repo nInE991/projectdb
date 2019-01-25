@@ -60,13 +60,66 @@ $(document).ready(function () {
     $('.trlinklog').on('click',function () {
         document.location.replace("/logs/"+ $(this).data('id'));
     });
+    $.ajax({
+        type: 'GET',
+        url: '/balance',
+        dataType: 'json',
+        success: function (data) {
+            $('.balance').text($('.balance').text()+ data+" ");
+        }
+    });
+    $('.button_add_components').on('click',function () {
         $.ajax({
-            type: 'GET',
-            url: '/balance',
-            dataType: 'json',
-            success: function (data) {
-                console.log(data);
-                $('.balance').text($('.balance').text()+ data+" ");
+            type: 'POST',
+            url: '/components/add',
+            data: {
+                name: $('#name').val(),
+                units: $('.units').val()
+            },
+
+            success: function () {
+                document.location.replace("/components");
+            },
+            error: function () {
+                alert("Запись не добавлена!")
             }
         });
+        });
+    $('.button_del_components').on('click',function () {
+        $.ajax({
+            type: 'DELETE',
+            url: '/components/delete',
+            data: {
+               id: $(this).data('id')
+            },
+
+            success: function () {
+                document.location.replace("/components");
+            },
+            error: function () {
+                alert("Запись не удалена!")
+            }
+        });
+    });
+    $('.button_edit_components').on('click',function () {
+        document.location.replace("/components/"+ $(this).data('id'));
+    });
+    $('.besc').on('click',function () {
+        $.ajax({
+        type: 'POST',
+            url: '/components/edit',
+            data: {
+                id: $(this).data('id'),
+                name: $('#name').val(),
+                units: $('.units').val()
+        },
+
+        success: function () {
+            document.location.replace("/components");
+        },
+        error: function () {
+            alert("Запись не изменена!")
+        }
+        });
+    });
 });

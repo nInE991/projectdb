@@ -1,5 +1,6 @@
 package dznine.projectdb.config;
 
+import dznine.projectdb.ProjectdbApplication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -14,6 +15,7 @@ public class AppConfig {
     @Bean
     @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
     public Logger logger() {
-        return LoggerFactory.getLogger("application");
+        return LoggerFactory.getLogger(ProjectdbApplication.class);
     }
+
 }

@@ -12,16 +12,14 @@ public class Sales {
     @JoinColumn(name = "ordes_id",nullable = false)
     private Orders orders;
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name="price_id",nullable = false)
-    private Prices prices;
+    @JoinColumn(name="products_id",nullable = false)
+    private Products products;
+    @Column(nullable = false)
+    private Integer price;
     @Column(nullable = false)
     private Integer count;
     @Column(nullable = false)
-    private Float sum;
-    @Column(nullable = false)
-    private Float discount;
-    @Column(nullable = false)
-    private Float total;
+    private Float summ;
 
     public Integer getId() {
         return id;
@@ -39,12 +37,12 @@ public class Sales {
         this.orders = orders;
     }
 
-    public Prices getPrices() {
-        return prices;
+    public Products getProducts() {
+        return products;
     }
 
-    public void setPrices(Prices prices) {
-        this.prices = prices;
+    public void setProducts(Products products) {
+        this.products = products;
     }
 
     public Integer getCount() {
@@ -55,27 +53,20 @@ public class Sales {
         this.count = count;
     }
 
-    public Float getSum() {
-        return sum;
+    public Float getSumm() {
+        return summ;
     }
 
-    public void setSum(Float sum) {
-        this.sum = sum;
+    public void setSumm(Float summ) {
+        this.summ = summ;
     }
 
-    public Float getDiscount() {
-        return discount;
+
+    public Integer getPrice() {
+        return price;
     }
 
-    public void setDiscount(Float discount) {
-        this.discount = discount;
-    }
-
-    public Float getTotal() {
-        return total;
-    }
-
-    public void setTotal(Float total) {
-        this.total = total;
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 }
