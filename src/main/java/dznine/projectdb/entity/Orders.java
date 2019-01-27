@@ -11,18 +11,15 @@ public class Orders {
     private Integer id;
     @Column(nullable = false)
     private Date date;
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
     @JoinColumn(name="ordersActions_id",nullable = false)
     private OrdersActions ordersActions;
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
     @JoinColumn(name="counterpoints_id",nullable = false)
     private Counterparties counterparties;
     @Column(nullable = false)
     private Float total;
-    @Column(nullable = false)
-    private Float discount;
-    @Column(nullable = false)
-    private Float totalwithdiscount;
+
     @Column
     private String note;
 
@@ -92,19 +89,4 @@ public class Orders {
         return date.toString();
     }
 
-    public Float getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(Float discount) {
-        this.discount = discount;
-    }
-
-    public Float getTotalwithdiscount() {
-        return totalwithdiscount;
-    }
-
-    public void setTotalwithdiscount(Float totalwithdiscount) {
-        this.totalwithdiscount = totalwithdiscount;
-    }
 }

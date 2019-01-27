@@ -12,7 +12,7 @@ public class Buy {
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "ordes_id",nullable = false)
     private Orders orders;
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
     @JoinColumn(name="components_id",nullable = false)
     private Components components;
     @Column(nullable = false)

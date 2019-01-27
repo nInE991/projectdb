@@ -10,9 +10,6 @@ public class Components {
     private Integer id;
     @Column(unique = true,nullable = false)
     private String name;
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "products_id",nullable = false)
-    private Products products;
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.DETACH)
     @JoinColumn(name = "units_id",nullable = false)
     private Units units;
@@ -47,14 +44,6 @@ public class Components {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Products getProducts() {
-        return products;
-    }
-
-    public void setProducts(Products products) {
-        this.products = products;
     }
 
     public Units getUnits() {

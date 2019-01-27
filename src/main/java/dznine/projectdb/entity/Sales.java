@@ -11,11 +11,9 @@ public class Sales {
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "ordes_id",nullable = false)
     private Orders orders;
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
     @JoinColumn(name="products_id",nullable = false)
     private Products products;
-    @Column(nullable = false)
-    private Integer price;
     @Column(nullable = false)
     private Integer count;
     @Column(nullable = false)
@@ -61,12 +59,4 @@ public class Sales {
         this.summ = summ;
     }
 
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
 }
