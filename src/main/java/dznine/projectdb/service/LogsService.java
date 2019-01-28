@@ -31,11 +31,17 @@ public class LogsService {
         return logsActionsRepository.getOne(id);
     }
 
-    public void save(Logs logs) {
+    public void save(Logs logs) throws Exception {
         Logs log = logs;
-        logsRepository.save(logs);
-        log.getComponents().getComponentBalance().setBalance(log.getComponents().getComponentBalance().getBalance() + log.getCount());
-        balanceRepository.save(log.getComponents().getComponentBalance());
+
+
+        if (log.getComponents().getComponentBalance().getBalance() + log.getCount() > 0.0) {
+            logsRepository.save(logs);
+            log.getComponents().getComponentBalance().setBalance(log.getComponents().getComponentBalance().getBalance() + log.getCount());
+            balanceRepository.save(log.getComponents().getComponentBalance());
+        } else {
+            throw new Exception("balance <0");
+        }
 
     }
 }

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Производство знаков</title>
+    <title>Производство</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
@@ -25,7 +25,7 @@
                 <a class="nav-link" href="/orders">Заказы</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/">Продукция</a>
+                <a class="nav-link" href="/products">Продукция</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/components">Компоненты</a>

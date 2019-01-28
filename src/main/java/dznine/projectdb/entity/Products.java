@@ -1,6 +1,7 @@
 package dznine.projectdb.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name ="tbl_products")
@@ -10,11 +11,20 @@ public class Products {
     private Integer id;
     @Column(unique = true,nullable = false)
     private String name;
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "components_id", nullable = false)
-    private ProductStructure productStructure;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "products_id")
+    private Set<ProductStructure> productStructure;
     @Column(nullable = false)
     private Float price;
+
+    public Products() {
+    }
+
+    public Products(String name, Set<ProductStructure> productStructure, Float price) {
+        this.name = name;
+        this.productStructure = productStructure;
+        this.price = price;
+    }
 
     public Integer getId() {
         return id;
@@ -40,11 +50,11 @@ public class Products {
         this.price = price;
     }
 
-    public ProductStructure getProductStructure() {
+    public Set<ProductStructure> getProductStructure() {
         return productStructure;
     }
 
-    public void setProductStructure(ProductStructure productStructure) {
+    public void setProductStructure(Set<ProductStructure> productStructure) {
         this.productStructure = productStructure;
     }
 }
