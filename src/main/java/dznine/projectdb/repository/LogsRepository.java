@@ -9,8 +9,13 @@ import java.util.List;
 
 @Repository
 public interface LogsRepository extends JpaRepository<Logs, Integer> {
-    @Query("select new Logs(componets.id,componets.name,Sum(logs.count),unitst.name) from Logs logs " +
-            "left join Components componets on logs.components.id =componets.id " +
-            "left join Units unitst on componets.units.id = unitst.id group by componets.id,componets.name,unitst.name")
-    List<Logs> listLogs();
+    @Query("select logs from Logs logs where logs.components.id = ?1")
+    List<Logs> getByComponents(Integer id);
+
+    @Override
+    List<Logs> findAll();
+
+    @Override
+    <S extends Logs> S save(S s);
+
 }

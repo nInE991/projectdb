@@ -11,7 +11,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
-    <script src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">

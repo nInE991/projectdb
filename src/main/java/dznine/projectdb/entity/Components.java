@@ -15,7 +15,7 @@ public class Components {
     private Units units;
     @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name="balance_id",nullable = false)
-    ComponentBalance componentBalance;
+    private ComponentBalance componentBalance;
 
     public Components() {
     }
@@ -25,9 +25,10 @@ public class Components {
         this.units = units;
     }
 
-    public Components(Integer id, String name, Units units) {
+    public Components(Integer id, String name, ComponentBalance balance, Units units) {
         this.id = id;
         this.name = name;
+        this.componentBalance = balance;
         this.units = units;
     }
     public Integer getId() {

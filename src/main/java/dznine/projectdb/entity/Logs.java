@@ -8,14 +8,14 @@ import java.util.Date;
 @Table(name = "tbl_logs")
 public class Logs {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false)
     private Date date;
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
     @JoinColumn(name = "actions_id",nullable = false)
     private LogsActions actions;
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name="components_id",nullable = false)
     private Components components;
     @Column(nullable = false)
@@ -26,11 +26,12 @@ public class Logs {
     public Logs() {
     }
 
-    public Logs(Integer id, String components, Double count,String name) {
-        this.components.setId(id);
-        this.components.setName(components);
-        this.count = count.floatValue();
-        this.components.getUnits().setName(name);
+    public Logs(Date date, LogsActions actions, Components components, Float count, String note) {
+        this.date = date;
+        this.actions = actions;
+        this.components = components;
+        this.count = count;
+        this.note = note;
     }
 
     public Date getDate() {

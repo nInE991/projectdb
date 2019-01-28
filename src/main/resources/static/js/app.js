@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $('.button_send_parties').on('click', function () {
         $.ajax({
             type: 'POST',
@@ -18,9 +19,11 @@ $(document).ready(function () {
             }
         });
     });
+
     $('.button_edit_parties').on('click',function () {
         document.location.replace("/counterparties/"+ $(this).data('id'));
     });
+
     $('.button_del_parties').on('click', function () {
         $.ajax({
             type: 'DELETE',
@@ -37,6 +40,7 @@ $(document).ready(function () {
             }
         });
     });
+
     $('.button_edit_send_parties').on('click',function () {
         $.ajax({
             type: 'POST',
@@ -57,9 +61,11 @@ $(document).ready(function () {
             }
         });
     });
+
     $('.trlinklog').on('click',function () {
         document.location.replace("/logs/"+ $(this).data('id'));
     });
+
     $.ajax({
         type: 'GET',
         url: '/balance',
@@ -68,6 +74,7 @@ $(document).ready(function () {
             $('.balance').text($('.balance').text()+ data+" ");
         }
     });
+
     $('.button_add_components').on('click',function () {
         $.ajax({
             type: 'POST',
@@ -85,6 +92,7 @@ $(document).ready(function () {
             }
         });
         });
+
     $('.button_del_components').on('click',function () {
         $.ajax({
             type: 'DELETE',
@@ -101,9 +109,11 @@ $(document).ready(function () {
             }
         });
     });
+
     $('.button_edit_components').on('click',function () {
         document.location.replace("/components/"+ $(this).data('id'));
     });
+
     $('.besc').on('click',function () {
         $.ajax({
         type: 'POST',
@@ -122,4 +132,5 @@ $(document).ready(function () {
         }
         });
     });
+
 });

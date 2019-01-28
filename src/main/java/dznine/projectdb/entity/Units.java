@@ -11,6 +11,9 @@ public class Units {
     @Column(unique = true,nullable = false)
     private String name;
 
+    public Units() {
+    }
+
     public Integer getId() {
         return id;
     }

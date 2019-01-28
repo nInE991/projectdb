@@ -3,7 +3,7 @@ package dznine.projectdb.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tbl_componetsbalance")
+@Table(name = "tbl_compbalance")
 public class ComponentBalance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,6 +14,10 @@ public class ComponentBalance {
     public ComponentBalance() {
     }
 
+    public ComponentBalance(Integer id, Float balance) {
+        this.id = id;
+        this.balance = balance;
+    }
     public ComponentBalance(Float balance) {
         this.balance = balance;
     }

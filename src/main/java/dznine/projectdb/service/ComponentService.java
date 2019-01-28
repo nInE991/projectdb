@@ -2,18 +2,16 @@ package dznine.projectdb.service;
 
 import dznine.projectdb.config.AppConfig;
 import dznine.projectdb.entity.Components;
-import dznine.projectdb.repository.ComponentsBalanceRepository;
 import dznine.projectdb.repository.ComponentsRepository;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
+import java.util.List;
 
 @Service
 public class ComponentService {
     @Inject
     AppConfig appConfig;
-    @Inject
-    ComponentsBalanceRepository componentsBalanceRepository;
     @Inject
     ComponentsRepository componentsRepository;
 
@@ -25,4 +23,9 @@ public class ComponentService {
     public Components getComp(Integer id){
         return componentsRepository.getOne(id);
     }
+
+    public List<Components> getAll() {
+        return componentsRepository.findAll();
+    }
+
 }

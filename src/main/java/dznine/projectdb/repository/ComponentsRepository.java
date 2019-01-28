@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface ComponentsRepository extends JpaRepository<Components, Integer> {
     @Modifying
-    @Query("select new Components(components.id,components.name,units)  from Components components inner join Units units on components.units.id = units.id")
+    @Query("select new Components(components.id,components.name,balance,units) from Components components inner join ComponentBalance balance on components.componentBalance.id = balance.id inner join Units units on components.units.id = units.id")
     List<Components> findAll();
 
     @Override

@@ -11,6 +11,9 @@ public class LogsActions {
     @Column(nullable = false,unique = true)
     private String action;
 
+    public LogsActions() {
+    }
+
     public Integer getId() {
         return id;
     }

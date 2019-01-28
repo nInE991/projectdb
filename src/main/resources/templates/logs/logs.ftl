@@ -4,7 +4,7 @@
         <div class="clearfix">
             <span class="float-left"><h2>Склад</h2></span>
             <span class="float-right pr-5">
-            <a class=" mt-1  btn btn-dark" href="/orders/add" role="button">Инвентаризация</a>
+            <a class=" mt-1  btn btn-dark" href="/logs/add" role="button">Инвентаризация</a>
         </span>
         </div>
         <div class="float-sm-right"></div>
@@ -16,16 +16,16 @@
                 <th scope="col">Ед. Измерения</th>
             </tr>
             </thead>
-        <#list logsList as componentBalance>
-            <tr class="trlinklog" date-link="${componentBalance.components.id}">
+        <#list logsList as components>
+            <tr class="trlinklog" data-id="${components.id}">
                 <td>
-                    <div class="mt-1">${componentBalance.components.name}</div>
+                    <div class="mt-1">${components.name}</div>
                 </td>
                 <td>
-                    <div class="mt-1">${componentBalance.count}</div>
+                    <div class="mt-1">${components.componentBalance.balance}</div>
                 </td>
                 <td>
-                    <div class="mt-1">${componentBalance.components.units.name}</div>
+                    <div class="mt-1">${components.units.name}</div>
                 </td>
             </tr>
         </#list>
