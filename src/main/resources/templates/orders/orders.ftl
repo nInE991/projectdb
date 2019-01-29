@@ -4,7 +4,7 @@
     <div class="clearfix">
         <span class="float-left"><h2>Список заказов</h2></span>
         <span class="float-right pr-5">
-            <a class=" mt-1  btn btn-dark"  href="/orders/add" role="button">Купить</a>
+            <a class=" mt-1  btn btn-dark" href="/orders/buy" role="button">Купить</a>
             <a class=" mt-1  btn btn-dark"  href="/orders/add" role="button">Продать</a>
         </span>
     </div>
@@ -17,7 +17,7 @@
             <th scope="col">Тип</th>
             <th scope="col">Контрагент</th>
             <th scope="col">Сумма</th>
-            <th scope="col">Заметки</th>
+            <th scope="col">Действия</th>
         </tr>
         </thead>
  <#list ordersList as orders>
@@ -26,7 +26,7 @@
                     <div class="mt-1">${orders.id}</div>
                 </td>
                 <td>
-                    <div class="mt-1">${orders.date}</div>
+                    <div class="mt-1">${orders.date?date}</div>
                 </td>
                 <td>
                     <div class="mt-1">${orders.ordersActions.action}</div>
@@ -38,10 +38,12 @@
                     <div class="mt-1">${orders.total}</div>
                 </td>
                 <td>
-                    <div class="mt-1">${orders.note}</div>
+                    <button type="button" class="btn btn-outline-light text-dark trlinklog"
+                            data-id="${components.id}"><span class="oi oi-menu"></span></span></button>
                 </td>
             </tr>
  </#list>
     </table>
 </div>
+<script type="text/javascript" src="/js/orderspage.js"></script>
 </@a.basis>

@@ -9,7 +9,7 @@ public class OrdersBalance {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false)
-    private Float balance;
+    private Double balance;
 
     public Integer getId() {
         return id;
@@ -19,11 +19,11 @@ public class OrdersBalance {
         this.id = id;
     }
 
-    public Float getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(Float balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 }

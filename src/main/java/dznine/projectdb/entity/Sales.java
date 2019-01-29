@@ -16,8 +16,6 @@ public class Sales {
     private Products products;
     @Column(nullable = false)
     private Integer count;
-    @Column(nullable = false)
-    private Float summ;
 
     public Integer getId() {
         return id;
@@ -50,13 +48,4 @@ public class Sales {
     public void setCount(Integer count) {
         this.count = count;
     }
-
-    public Float getSumm() {
-        return summ;
-    }
-
-    public void setSumm(Float summ) {
-        this.summ = summ;
-    }
-
 }
