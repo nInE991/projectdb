@@ -16,4 +16,7 @@ public interface ProductsRepository extends JpaRepository<Products, Integer> {
 
     @Override
     <S extends Products> S save(S s);
+
+    @Override
+    void deleteById(Integer integer);
 }

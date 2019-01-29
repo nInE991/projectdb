@@ -14,6 +14,7 @@
                 <th scope="col">Название</th>
                 <th scope="col">Остаток</th>
                 <th scope="col">Ед. Измерения</th>
+                <th scope="col">Действия</th>
             </tr>
             </thead>
         <#list logsList as components>
@@ -26,6 +27,10 @@
                 </td>
                 <td>
                     <div class="mt-1">${components.units.name}</div>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-outline-light text-dark trlinklog"
+                            data-id="${components.id}"><span class="oi oi-menu"></span></span></button>
                 </td>
             </tr>
         </#list>

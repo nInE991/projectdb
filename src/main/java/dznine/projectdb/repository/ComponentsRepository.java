@@ -22,4 +22,8 @@ public interface ComponentsRepository extends JpaRepository<Components, Integer>
 
     @Override
     Components getOne(Integer integer);
+
+    @Modifying
+    @Query("select components from Components components where components.id not in (select productStruct.components.id from ProductStructure productStruct where productStruct.products.id = ?1)")
+    List<Components> findAllByProduct(Integer id);
 }

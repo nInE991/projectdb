@@ -8,11 +8,23 @@ public class ProductStructure {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
+    @JoinColumn(name = "products_id")
+    private Products products;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
     @JoinColumn(name = "components_id", nullable = false)
     private Components components;
     @Column(nullable = false)
     private Float count;
+
+    public ProductStructure() {
+    }
+
+    public ProductStructure(Products products, Components components, Float count) {
+        this.products = products;
+        this.components = components;
+        this.count = count;
+    }
 
     public Integer getId() {
         return id;
@@ -36,5 +48,13 @@ public class ProductStructure {
 
     public void setCount(Float count) {
         this.count = count;
+    }
+
+    public Products getProducts() {
+        return products;
+    }
+
+    public void setProducts(Products products) {
+        this.products = products;
     }
 }

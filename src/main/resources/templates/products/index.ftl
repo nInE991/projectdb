@@ -25,9 +25,11 @@
                 </td>
                 <td>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-outline-light text-dark"
+                        <button type="button" class="btn btn-outline-light text-dark but_see_struct"
+                                data-id="${products.id}"><span class="oi oi-menu"></span></span></button>
+                        <button type="button" class="btn btn-outline-light text-dark but_edit_prod"
                                 data-id="${products.id}"><span class="oi oi-pencil"></span></button>
-                        <button type="button" class="btn btn-outline-light text-dark"
+                        <button type="button" class="btn btn-outline-light text-dark button_delete_products"
                                 data-id="${products.id}"><span
                                 class="oi oi-trash"></span></button>
                     </div>
@@ -36,4 +38,5 @@
         </#list>
          </table>
      </div>
+ <script type="text/javascript" src="/js/productspage.js"></script>
 </@a.basis>

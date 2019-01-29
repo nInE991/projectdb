@@ -28,4 +28,7 @@ public class ComponentService {
         return componentsRepository.findAll();
     }
 
+    public List<Components> getByProduct(Integer id) {
+        return componentsRepository.findAllByProduct(id);
+    }
 }

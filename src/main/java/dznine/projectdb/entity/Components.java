@@ -10,7 +10,7 @@ public class Components {
     private Integer id;
     @Column(unique = true,nullable = false)
     private String name;
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.DETACH)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
     @JoinColumn(name = "units_id",nullable = false)
     private Units units;
     @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
