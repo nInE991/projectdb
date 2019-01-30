@@ -3,13 +3,16 @@ package dznine.projectdb.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tbl_ordersactions")
-public class OrdersActions {
+@Table(name = "tbl_actions")
+public class Actions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false,unique = true)
     private String action;
+
+    public Actions() {
+    }
 
     public Integer getId() {
         return id;

@@ -22,7 +22,10 @@
     <div class="collapse navbar-collapse mt-1" id="navbarText">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
-                <a class="nav-link" href="/orders">Заказы</a>
+                <a class="nav-link" href="/sales">Продажи</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/buy">Закупки</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/products">Продукция</a>

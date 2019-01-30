@@ -38,7 +38,7 @@ public class ComponentsController {
     public ResponseEntity add(@RequestParam("name") String name, @RequestParam("units") Integer unit){
         try {
             Components components = new Components(name,unitsRepository.getOne(unit));
-            components.setComponentBalance(balanceRepository.save(new ComponentBalance(Float.valueOf(0))));
+            components.setComponentBalance(balanceRepository.save(new ComponentBalance(Double.valueOf(0))));
             componentsRepository.save(components);
         }catch (Exception ex){
             return ResponseEntity.status(404).build();

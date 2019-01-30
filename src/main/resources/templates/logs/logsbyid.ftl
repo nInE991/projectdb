@@ -14,6 +14,7 @@
             <th scope="col">Дата</th>
             <th scope="col">Тип</th>
             <th scope="col">Количество</th>
+            <th scope="col">Ед. Измерения</th>
             <th scope="col">Заметки</th>
         </tr>
         </thead>
@@ -27,6 +28,9 @@
                 </td>
                 <td>
                     <div class="mt-1">${logs.count}</div>
+                </td>
+                <td>
+                    <div class="mt-1">${logs.components.units.name}</div>
                 </td>
                 <td>
                     <div class="mt-1">${logs.note}</div>

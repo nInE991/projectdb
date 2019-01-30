@@ -21,7 +21,7 @@
         </tr>
         </thead>
  <#list ordersList as orders>
-            <tr class="trlink" date-link=${orders.id}>
+            <tr>
                 <td>
                     <div class="mt-1">${orders.id}</div>
                 </td>
@@ -29,7 +29,7 @@
                     <div class="mt-1">${orders.date?date}</div>
                 </td>
                 <td>
-                    <div class="mt-1">${orders.ordersActions.action}</div>
+                    <div class="mt-1">${orders.actions.action}</div>
                 </td>
                 <td>
                     <div class="mt-1">${orders.counterparties.name}</div>
@@ -38,8 +38,11 @@
                     <div class="mt-1">${orders.total}</div>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-outline-light text-dark trlinklog"
-                            data-id="${components.id}"><span class="oi oi-menu"></span></span></button>
+                    <button type="button" class="btn btn-outline-light text-dark button_ordersid"
+                            data-id="${orders.id}"><span class="oi oi-menu"></span></button>
+                    <button type="button" class="btn btn-outline-light text-dark button_del_ordersid"
+                            data-id="${orders.id}"><span class="oi oi-trash"></span></button>
+                    </div>
                 </td>
             </tr>
  </#list>

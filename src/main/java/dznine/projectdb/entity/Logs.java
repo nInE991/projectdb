@@ -14,24 +14,32 @@ public class Logs {
     private Date date;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
     @JoinColumn(name = "actions_id",nullable = false)
-    private LogsActions actions;
+    private Actions actions;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name="components_id",nullable = false)
     private Components components;
     @Column(nullable = false)
-    private Float count;
+    private Double count;
     @Column
     private String note;
 
     public Logs() {
     }
 
-    public Logs(Date date, LogsActions actions, Components components, Float count, String note) {
+    public Logs(Date date, Actions actions, Components components, Double count, String note) {
         this.date = date;
         this.actions = actions;
         this.components = components;
         this.count = count;
         this.note = note;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Date getDate() {
@@ -42,11 +50,11 @@ public class Logs {
         this.date = date;
     }
 
-    public LogsActions getActions() {
+    public Actions getActions() {
         return actions;
     }
 
-    public void setActions(LogsActions actions) {
+    public void setActions(Actions actions) {
         this.actions = actions;
     }
 
@@ -58,11 +66,11 @@ public class Logs {
         this.components = components;
     }
 
-    public Float getCount() {
+    public Double getCount() {
         return count;
     }
 
-    public void setCount(Float count) {
+    public void setCount(Double count) {
         this.count = count;
     }
 
@@ -72,13 +80,5 @@ public class Logs {
 
     public void setNote(String note) {
         this.note = note;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 }

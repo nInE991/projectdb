@@ -12,22 +12,22 @@ $(document).ready(function () {
     $('.button_buy').on('click', function () {
         $.ajax({
             type: 'POST',
-            url: '/orders/buy/add',
+            url: '/buy/add',
             data: {
-                compid: $('.comp').val(),
+                id: $('.comp').val(),
                 date: $('#date').val(),
-                countid: $('.counter').val(),
                 count: $('#count').val(),
                 price: $('#price').val()
             },
             success: function () {
-                document.location.replace("/orders");
+                document.location.replace("/buy");
             },
             error: function () {
-                alert("Заказ не добавлен!")
+                alert("Закупка не добавлена!")
             }
         });
     });
+
     $('.total').change(function () {
         if ($('#count').val() < 0) {
             $('#count').val(0);
@@ -37,13 +37,12 @@ $(document).ready(function () {
         }
         $('#total').val($('#count').val() * $('#price').val());
     });
-    $('.button_ordersid').on('click', function () {
-        document.location.replace("/orders/" + $(this).data('id'));
-    });
+
+
     $('.button_del_ordersid').on('click', function () {
         $.ajax({
             type: 'DELETE',
-            url: '/orders/delete',
+            url: '/buy/delete',
             data: {
                 id: $(this).data('id')
             },

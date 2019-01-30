@@ -42,8 +42,8 @@ public class LogsController {
     }
 
     @PostMapping("/logs/add")
-    public ResponseEntity edit(@RequestParam("id") Integer id, @RequestParam("count") Float count, @RequestParam("note") String note) throws Exception {
-        Logs logs = new Logs(new Date(), logsService.getLogsAction(3), service.getComp(id), count, note);
+    public ResponseEntity edit(@RequestParam("id") Integer id, @RequestParam("count") Double count, @RequestParam("note") String note) throws Exception {
+        Logs logs = new Logs(new Date(), logsService.getAction(3), service.getComp(id), count, note);
         logsService.save(logs);
         return ResponseEntity.ok().build();
     }

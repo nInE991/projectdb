@@ -9,16 +9,17 @@ public class ComponentBalance {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false)
-    private Float balance;
+    private Double balance;
 
     public ComponentBalance() {
     }
 
-    public ComponentBalance(Integer id, Float balance) {
+    public ComponentBalance(Integer id, Double balance) {
         this.id = id;
         this.balance = balance;
     }
-    public ComponentBalance(Float balance) {
+
+    public ComponentBalance(Double balance) {
         this.balance = balance;
     }
 
@@ -30,11 +31,11 @@ public class ComponentBalance {
         this.id = id;
     }
 
-    public Float getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(Float balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 }

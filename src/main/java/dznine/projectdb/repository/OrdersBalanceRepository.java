@@ -11,4 +11,7 @@ public interface OrdersBalanceRepository extends JpaRepository<OrdersBalance, In
 
     @Override
     OrdersBalance getOne(Integer integer);
+
+    @Override
+    <S extends OrdersBalance> S save(S s);
 }

@@ -8,14 +8,19 @@ public class Sales {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = "ordes_id",nullable = false)
-    private Orders orders;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
     @JoinColumn(name="products_id",nullable = false)
     private Products products;
     @Column(nullable = false)
     private Integer count;
+    @Column(nullable = false)
+    private Double total;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "counterparties_id", nullable = false)
+    private Counterparties counterparties;
+
+    public Sales() {
+    }
 
     public Integer getId() {
         return id;
@@ -23,14 +28,6 @@ public class Sales {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Orders getOrders() {
-        return orders;
-    }
-
-    public void setOrders(Orders orders) {
-        this.orders = orders;
     }
 
     public Products getProducts() {
@@ -47,5 +44,21 @@ public class Sales {
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
+    }
+
+    public Counterparties getCounterparties() {
+        return counterparties;
+    }
+
+    public void setCounterparties(Counterparties counterparties) {
+        this.counterparties = counterparties;
     }
 }

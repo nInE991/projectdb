@@ -15,4 +15,8 @@ public class CounterService {
     public List<Counterparties> getAll() {
         return counterpartiesRepository.findAll();
     }
+
+    public Counterparties getbyId(Integer id) {
+        return counterpartiesRepository.findById(id).get();
+    }
 }
