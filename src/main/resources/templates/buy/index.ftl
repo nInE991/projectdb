@@ -2,7 +2,7 @@
 <@a.basis>
 <div class="container " style="margin-top: 30px">
     <div class="clearfix">
-        <span class="float-left"><h2>Список заказов</h2></span>
+        <span class="float-left"><h2>Список Закупок</h2></span>
         <span class="float-right pr-5">
             <a class=" mt-1  btn btn-dark" href="/buy/add" role="button">Добавить закупку</a>
         </span>

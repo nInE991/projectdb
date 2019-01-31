@@ -15,12 +15,12 @@ public class ProductStructure {
     @JoinColumn(name = "components_id", nullable = false)
     private Components components;
     @Column(nullable = false)
-    private Float count;
+    private Double count;
 
     public ProductStructure() {
     }
 
-    public ProductStructure(Products products, Components components, Float count) {
+    public ProductStructure(Products products, Components components, Double count) {
         this.products = products;
         this.components = components;
         this.count = count;
@@ -42,11 +42,11 @@ public class ProductStructure {
         this.components = components;
     }
 
-    public Float getCount() {
+    public Double getCount() {
         return count;
     }
 
-    public void setCount(Float count) {
+    public void setCount(Double count) {
         this.count = count;
     }
 

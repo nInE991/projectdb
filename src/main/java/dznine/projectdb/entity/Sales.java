@@ -1,6 +1,7 @@
 package dznine.projectdb.entity;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "tbl_sales")
@@ -8,6 +9,8 @@ public class Sales {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(nullable = false)
+    private Date date;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
     @JoinColumn(name="products_id",nullable = false)
     private Products products;
@@ -15,11 +18,19 @@ public class Sales {
     private Integer count;
     @Column(nullable = false)
     private Double total;
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
     @JoinColumn(name = "counterparties_id", nullable = false)
     private Counterparties counterparties;
 
     public Sales() {
+    }
+
+    public Sales(Date date, Products products, Integer count, Double total, Counterparties counterparties) {
+        this.date = date;
+        this.products = products;
+        this.count = count;
+        this.total = total;
+        this.counterparties = counterparties;
     }
 
     public Integer getId() {
@@ -28,6 +39,14 @@ public class Sales {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public Products getProducts() {

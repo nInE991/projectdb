@@ -27,11 +27,11 @@ public class BuyService {
     }
 
     public void save(Buy buy) throws Exception {
+        Logs logs = new Logs(buy.getDate(), actionRepository.getOne(2), buy.getComponents(), buy.getCount().doubleValue(), " Закупка № " + buyRepository.save(buy).getId());
+        logsService.save(logs);
         OrdersBalance ordersBalance = ordersBalanceService.getBalance();
         ordersBalance.setBalance(ordersBalance.getBalance() - buy.getTotal());
         ordersBalanceService.saveBalance(ordersBalance);
-        Logs logs = new Logs(buy.getDate(), actionRepository.getOne(2), buy.getComponents(), buy.getCount().doubleValue(), " Закупка № " + buyRepository.save(buy).getId());
-        logsService.save(logs);
     }
 
     public void delete(Integer id) throws Exception {

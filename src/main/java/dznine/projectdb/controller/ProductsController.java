@@ -66,7 +66,7 @@ public class ProductsController {
     }
 
     @PostMapping("/products/{id}/components")
-    public ResponseEntity addcomponents(@PathVariable("id") Integer id, @RequestParam("id") Integer comp, @RequestParam("count") Float count) {
+    public ResponseEntity addcomponents(@PathVariable("id") Integer id, @RequestParam("id") Integer comp, @RequestParam("count") Double count) {
         Products products = productService.getOne(id);
         Components components = componentService.getComp(comp);
         productService.saveProductStruct(new ProductStructure(products, components, count));
@@ -85,5 +85,11 @@ public class ProductsController {
     public ResponseEntity deleteProductsComponents(@RequestParam("id") Integer id) {
         productService.deleteStructProduct(id);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping(value = "/products/price/{id}", produces = {"application/json"})
+    public @ResponseBody
+    String getBalance(@PathVariable("id") Integer id) {
+        return productService.getOne(id).getPrice().toString();
     }
 }
