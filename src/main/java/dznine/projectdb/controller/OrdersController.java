@@ -46,21 +46,21 @@ public class OrdersController {
 //
 //        }
 //
-////        Counterparties counterparties = counterService.getbyId(componentsid);
-////        Components components = componentService.getComp(componentsid);
-////        order.setDate(dateStr);
-////        order.setTotal(price * count);
-////        order.setCounterparties(counterparties);
-////        order.setActions(ordersService.getbyId(2));
-////        order.setNote(note);
-////        Buy buy = new Buy();
-////        buy.setComponents();
-////        buy.setCount(count);
-////        buy.setPrice(price);
-////        buy.setOrders(ordersService.save(order));
-////        Logs logs = new Logs();
-////        logs.setDate(dateStr);
-////        logs.setComponents();
+//        Counterparties counterparties = counterService.getbyId(componentsid);
+//        Components components = componentService.getComp(componentsid);
+//        order.setDate(dateStr);
+//        order.setTotal(price * count);
+//        order.setCounterparties(counterparties);
+//        order.setActions(ordersService.getbyId(2));
+//        order.setNote(note);
+//        Buy buy = new Buy();
+//        buy.setComponents();
+//        buy.setCount(count);
+//        buy.setPrice(price);
+//        buy.setOrders(ordersService.save(order));
+//        Logs logs = new Logs();
+//        logs.setDate(dateStr);
+//        logs.setComponents();
 //    }
 //        return ResponseEntity.ok().build();
 //    }
